@@ -1,15 +1,35 @@
 {
   "name": "vue-pictures-viewer",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "publish/vue-pictures-viewer.umd.min.js",
+  "description": "image-viewer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lzhd/vue-pictures-viewer.git"
+  },
+  "keywords": [
+    "image-viewer",
+    "image",
+    "vue",
+    "pictures-viewer",
+    "antd",
+    "viewer"
+  ],
+  "author": "lzhd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lzhd/vue-pictures-viewer/issues"
+  },
+  "homepage": "https://lzhd.github.io/vue-pictures-viewer",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib ./lib/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "ant-design-vue": "^1.5.3",
+    "iv-viewer": "^2.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
@@ -23,6 +43,7 @@
     "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   }
 }
