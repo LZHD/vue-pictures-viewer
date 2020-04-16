@@ -1,6 +1,6 @@
 {
   "name": "vue-pictures-viewer",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": false,
   "main": "publish/vue-pictures-viewer.umd.min.js",
   "description": "image-viewer",
@@ -25,7 +25,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib ./lib/index.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "site:build": "vue-cli-service build --dest dist",
+    "site:gh": "npm run site:build && gh-pages -d ./dist",
+    "release:next": "npm run build && npm publish --access public --tag next",
+    "release": "npm run build && npm publish --access public"
   },
   "dependencies": {
     "ant-design-vue": "^1.5.3",
