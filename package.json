@@ -1,6 +1,6 @@
 {
   "name": "vue-pictures-viewer",
-  "version": "0.0.1-beta2",
+  "version": "0.0.1-beta3",
   "private": false,
   "main": "publish/vue-pictures-viewer.umd.min.js",
   "description": "image-viewer",
@@ -32,8 +32,8 @@
     "release": "npm run build && npm publish --access public"
   },
   "dependencies": {
-    "element-ui": "^2.13.1",
-    "iv-viewer": "^2.0.1"
+    "element-ui": ">=2.10.0",
+    "iv-viewer": ">=2.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
@@ -41,6 +41,7 @@
     "@vue/cli-service": "~4.3.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
     "core-js": "^3.6.4",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
@@ -50,5 +51,6 @@
     "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "files":["package.json","publish"]
 }
