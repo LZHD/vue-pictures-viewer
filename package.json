@@ -1,6 +1,6 @@
 {
   "name": "vue-pictures-viewer",
-  "version": "0.0.1",
+  "version": "0.0.1-beta1",
   "private": false,
   "main": "publish/vue-pictures-viewer.umd.min.js",
   "description": "image-viewer",
@@ -13,8 +13,8 @@
     "image",
     "vue",
     "pictures-viewer",
-    "antd",
-    "viewer"
+    "viewer",
+    "element-ui"
   ],
   "author": "lzhd",
   "license": "MIT",
@@ -23,7 +23,7 @@
   },
   "homepage": "https://lzhd.github.io/vue-pictures-viewer",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --target lib ./lib/index.js",
     "lint": "vue-cli-service lint",
     "site:build": "vue-cli-service build --dest dist",
@@ -32,7 +32,7 @@
     "release": "npm run build && npm publish --access public"
   },
   "dependencies": {
-    "ant-design-vue": "^1.5.3",
+    "element-ui": "^2.13.1",
     "iv-viewer": "^2.0.1"
   },
   "devDependencies": {
@@ -41,6 +41,7 @@
     "@vue/cli-service": "~4.3.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.4",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.2.2",
