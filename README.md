@@ -63,8 +63,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| ivViewerType | iv-viewer全局配置，见[Options](https://github.com/s-yadav/iv-viewer#Options) | `IvViewerType` | - |
-| imageViewerType | 功能提示全局配置，见[imageViewOptions](#imageViewOptions) | `imageViewOptions` | - |
+| ivViewerOptions | iv-viewer全局配置，见[Options](https://github.com/s-yadav/iv-viewer#Options) | `IvViewerType` | - |
+| imageViewOptions | 功能提示全局配置，见[imageViewOptions](#imageViewOptions) | `imageViewOptions` | - |
 
 #### imageViewOptions
 

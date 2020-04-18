@@ -1,6 +1,6 @@
 {
   "name": "vue-pictures-viewer",
-  "version": "0.0.1-beta1",
+  "version": "0.0.1-beta2",
   "private": false,
   "main": "publish/vue-pictures-viewer.umd.min.js",
   "description": "image-viewer",
