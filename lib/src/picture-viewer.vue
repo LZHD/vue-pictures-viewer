@@ -79,8 +79,7 @@
 </template>
 
 <script>
-import ImageViewer from 'iv-viewer';
-import { FullScreenViewer } from 'iv-viewer';
+import ImageViewer, { FullScreenViewer } from 'iv-viewer';
 import 'iv-viewer/dist/iv-viewer.css';
 
 export default {
