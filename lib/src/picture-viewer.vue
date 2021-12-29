@@ -93,54 +93,54 @@ export default {
       imageTotal: 0,
       zoomValue: 100,
       isVertical: false,
-      imageRotate: 0,
+      imageRotate: 0
     };
   },
   props: {
     picturesViewer: {
-      type: String,
+      type: String
     },
     images: {
       type: Array,
       required: true,
       default() {
         return [];
-      },
+      }
     },
     defaultName: {
       type: String,
-      default: 'download',
+      default: 'download'
     },
     options: {
       type: Object,
       default() {
         return {};
-      },
+      }
     },
     showOperate: {
       type: Boolean,
-      default: true,
+      default: true
     },
     zoom: {
       type: Boolean,
-      default: true,
+      default: true
     },
     rotate: {
       type: Boolean,
-      default: true,
+      default: true
     },
     reset: {
       type: Boolean,
-      default: true,
+      default: true
     },
     fullscreen: {
       type: Boolean,
-      default: true,
+      default: true
     },
     download: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   created() {
     this.imageTotal = this.images.length;
@@ -159,19 +159,19 @@ export default {
             rotateRightToolTip: '顺时针旋转',
             resetToolTip: '重置',
             fullScreenToolTip: '全屏',
-            downloadToolTip: '下载',
+            downloadToolTip: '下载'
           },
           ivViewerOptions: {
             zoomValue: 100,
             maxZoom: 500,
             snapView: true,
             refreshOnResize: true,
-            zoomOnMouseWheel: true,
-          },
+            zoomOnMouseWheel: true
+          }
         },
         this.options
       );
-    },
+    }
   },
   methods: {
     zoomInImage() {
@@ -189,7 +189,7 @@ export default {
       this.imageViewer$.zoom(this.zoomValue);
     },
     rotateImage(isClockwise) {
-      this.beforeRotateImage().then((time) => {
+      this.beforeRotateImage().then(time => {
         if (isClockwise) {
           this.imageRotate += this.ROTATE_ANGLE;
         } else {
@@ -202,7 +202,7 @@ export default {
       });
     },
     fullscreenImage() {
-      this.beforeRotateImage().then((time) => {
+      this.beforeRotateImage().then(time => {
         if (time <= 0) {
           this.fullScreenViewer$.show(this.images[this.currentIndex]);
           this.addImageRotate(false);
@@ -312,7 +312,7 @@ export default {
     },
     setStyle(node, name, value) {
       const elements = document.querySelectorAll(`.${node}`);
-      elements.forEach((ele) => ele.style.setProperty(name, value));
+      elements.forEach(ele => ele.style.setProperty(name, value));
     },
     addTransition(node) {
       this.setStyle(node, 'transition', '0.5s linear');
@@ -322,7 +322,7 @@ export default {
     },
     setImageRotate(node, rotate, scale) {
       this.setStyle(node, 'transform', `${rotate} ${scale}`);
-    },
+    }
   },
   destroyed() {
     if (this.imageViewer$) {
@@ -331,7 +331,7 @@ export default {
     if (this.fullScreenViewer$) {
       this.fullScreenViewer$ = this.fullScreenViewer$.destroy();
     }
-  },
+  }
 };
 </script>
 
