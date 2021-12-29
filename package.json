@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": false,
   "main": "publish/vue-pictures-viewer.umd.min.js",
+  "unpkg": "publish/vue-pictures-viewer.umd.min.js",
   "description": "vue-pictures-viewer based on element-ui and iv-viewer",
   "repository": {
     "type": "git",
@@ -23,8 +24,12 @@
   },
   "homepage": "https://lzhd.github.io/vue-pictures-viewer",
   "scripts": {
+    "start": "npm run serve",
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --target lib ./lib/index.js",
+    "build": "npm run clean:lib && npm run build:lib && npm run build:wc",
+    "clean:lib": "rimraf publish",
+    "build:lib": "vue-cli-service build --target lib --no-clean ./lib/index.js",
+    "build:wc": "vue-cli-service build --target wc --no-clean ./lib/src/picture-viewer.vue",
     "lint": "vue-cli-service lint",
     "site:build": "vue-cli-service build --dest dist",
     "site:gh": "npm run site:build && gh-pages -d ./dist",
@@ -36,21 +41,31 @@
     "iv-viewer": ">=2.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.6",
-    "@vue/cli-plugin-eslint": "~4.5.6",
-    "@vue/cli-service": "~4.5.6",
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.1",
     "core-js": "^3.6.5",
     "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.19.1",
+    "lint-staged": "^9.5.0",
+    "prettier": "^2.5.1",
+    "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue": "^2.6.12",
-    "vue-template-compiler": "^2.6.12"
+    "vue": "^2.6.14",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
   },
   "files":["package.json","publish/vue-pictures-viewer.umd.min.js"]
 }
