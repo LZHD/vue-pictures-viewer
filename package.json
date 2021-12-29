@@ -1,9 +1,9 @@
 {
   "name": "vue-pictures-viewer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "main": "publish/vue-pictures-viewer.umd.min.js",
-  "unpkg": "publish/vue-pictures-viewer.umd.min.js",
+  "unpkg": "publish/picture-viewer.min.js",
   "description": "vue-pictures-viewer based on element-ui and iv-viewer",
   "repository": {
     "type": "git",
@@ -67,5 +67,5 @@
       "git add"
     ]
   },
-  "files":["package.json","publish/vue-pictures-viewer.umd.min.js"]
+  "files":["publish/vue-pictures-viewer.umd.min.js", "publish/picture-viewer.min.js"]
 }
