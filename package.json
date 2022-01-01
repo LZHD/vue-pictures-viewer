@@ -32,7 +32,7 @@
     "build:wc": "vue-cli-service build --target wc --no-clean ./lib/src/picture-viewer.vue",
     "lint": "vue-cli-service lint",
     "site:build": "vue-cli-service build --dest dist",
-    "site:gh": "npm run site:build && gh-pages -d ./dist",
+    "site:gh": "sh script/deploy.sh",
     "release:next": "npm run build && npm publish --access public --tag next",
     "release": "npm run build && npm publish --access public"
   },
